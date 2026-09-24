@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For name ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="stars"></div>
+    </div>
+
+
+    <!-- =========================
+         SCREEN 1
+    ========================== -->
+
+    <section id="introScreen" class="screen active">
+
+        <p class="small-text">
+            A tiny surprise awaits...
+        </p>
+
+        <h1>
+            Hey,
+            <span class="name">name</span>
+            <span class="emoji">👀</span>
+        </h1>
+
+        <p class="subtitle">
+            I made something for you.
+            <br>
+            And no, you don't get to escape this one. 😂
+        </p>
+
+        <button id="openBtn" class="open-btn">
+            <span>Open Your Surprise</span>
+            <span class="arrow">→</span>
+        </button>
+
+        <p class="hint">
+            P.S. You have been warned. 😌
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 2
+    ========================== -->
+
+    <section id="giftScreen" class="screen">
+
+        <p class="gift-intro">
+            Okay name...
+        </p>
+
+        <h2>
+            Your surprise is<br>
+            <span>waiting for you.</span>
+        </h2>
+
+        <div id="giftBox" class="gift-box">
+
+            <div class="lid"></div>
+
+            <div class="box">
+                <div class="ribbon vertical"></div>
+                <div class="ribbon horizontal"></div>
+            </div>
+
+            <div class="bow">
+                <div class="bow-left"></div>
+                <div class="bow-right"></div>
+            </div>
+
+        </div>
+
+        <p id="clickGift" class="click-gift">
+            ✨ Tap the gift ✨
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 3
+    ========================== -->
+
+    <section id="birthdayScreen" class="screen">
+
+        <div class="celebration">
+
+            <p class="birthday-small">
+                Today is officially...
+            </p>
+
+            <h2 class="birthday-title">
+                HAPPY
+                <span>BIRTHDAY</span>
+            </h2>
+
+            <div class="birthday-name">
+                KOMAL
+            </div>
+
+            <div class="mogu">
+                aka <span>name</span> 🐻
+            </div>
+
+            <p class="birthday-message">
+                Another year older.<br>
+                Still equally dangerous. 😂
+            </p>
+
+            <button id="continueBtn" class="continue-btn">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     SCREEN 4 - BIRTHDAY VERIFICATION
+========================= -->
+
+    <section id="missionScreen" class="screen">
+
+        <div class="mission-content">
+
+            <div class="warning-icon">🚨</div>
+
+            <p class="mission-small">
+                IMPORTANT BIRTHDAY VERIFICATION
+            </p>
+
+            <h2 class="mission-title">
+                Wait a minute,
+                <span>name...</span>
+            </h2>
+
+            <p class="mission-question">
+                Before you continue, we need to verify something.
+                <br><br>
+                Are you actually old enough to proceed? 🤨
+            </p>
+
+            <div class="answer-buttons">
+
+                <button id="yesBtn" class="answer-btn yes-btn">
+                    😌 Yes, obviously
+                </button>
+
+                <button id="thinkBtn" class="answer-btn think-btn">
+                    🤔 Let me think...
+                </button>
+
+            </div>
+
+            <p id="missionResponse" class="mission-response"></p>
+
+            <button id="rewardBtn" class="reward-btn hidden">
+                🔓 Unlock My Reward
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= SCREEN 5 - PHOTO MEMORIES ========================= -->
+    <section id="memoryScreen" class="screen">
+        <div class="memory-content">
+            <p class="memory-small"> CLASSIFIED ARCHIVES 📂 </p>
+            <h2 class="memory-title"> Before we continue... <span>let's look at some evidence. 👀</span> </h2>
+            <!-- PHOTO CARD -->
+            <div class="photo-card">
+                <div class="photo-number"> 01 / 04 </div>
+                <div class="photo-frame"> <img id="memoryImage" src="https://picsum.photos/600/700?random=1"
+                        alt="Memory"> </div>
+            </div> <!-- CAPTION -->
+            <p id="memoryCaption" class="memory-caption"> Exhibit A: name spotted in her natural habitat. 😂 </p>
+            <!-- NEXT BUTTON --> <button id="nextPhotoBtn" class="memory-btn"> Next Evidence 📸 → </button>
+            <!-- FINAL BUTTON --> <button id="finishMemoryBtn" class="memory-btn finish-memory hidden"> Okay, enough
+                evidence 😂 → </button>
+        </div>
+    </section>
+
+    <!-- =========================
+     SCREEN 6 - GIFT SELECTION
+========================= -->
+
+    <section id="giftSelectionScreen" class="screen">
+
+        <div class="gift-selection-content">
+
+            <p class="gift-selection-small">
+                REWARD CENTER 🎁
+            </p>
+
+            <h2 class="gift-selection-title">
+                Okay Mogu Mogu...
+                <span>choose your reward.</span>
+            </h2>
+
+            <p class="gift-selection-subtitle">
+                You can only choose one. 😌
+                <br>
+                Choose wisely.
+            </p>
+
+
+            <!-- GIFT OPTIONS -->
+
+            <div class="gift-options">
+
+                <!-- Gift 1 -->
+
+                <div class="gift-option" data-gift="Sweet Treat">
+
+                    <div class="gift-icon">
+                        🍫
+                    </div>
+
+                    <h3>
+                        Sweet Treat
+                    </h3>
+
+                    <p>
+                        Because birthdays without
+                        chocolate are illegal.
+                    </p>
+
+                    <div class="select-indicator">
+                        Select
+                    </div>
+
+                </div>
+
+
+                <!-- Gift 2 -->
+
+                <div class="gift-option" data-gift="Something Pretty">
+
+                    <div class="gift-icon">
+                        🌸
+                    </div>
+
+                    <h3>
+                        Something Pretty
+                    </h3>
+
+                    <p>
+                        Because you deserve
+                        something beautiful.
+                    </p>
+
+                    <div class="select-indicator">
+                        Select
+                    </div>
+
+                </div>
+
+
+                <!-- Gift 3 -->
+
+                <div class="gift-option" data-gift="Mystery Gift">
+
+                    <div class="gift-icon">
+                        🎁
+                    </div>
+
+                    <h3>
+                        Mystery Gift
+                    </h3>
+
+                    <p>
+                        Highly classified.
+                        Proceed at your own risk. 😂
+                    </p>
+
+                    <div class="select-indicator">
+                        Select
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTINUE -->
+
+            <button id="giftContinueBtn" class="gift-continue-btn" disabled>
+                Select a gift first →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SCREEN 7 - GIFT RESULT
+========================= -->
+
+    <section id="giftResultScreen" class="screen">
+
+        <div class="gift-result-content">
+
+            <div class="result-emoji">
+                🎉
+            </div>
+
+            <p class="result-small">
+                ELIGIBILITY CHECK COMPLETE
+            </p>
+
+            <h2 class="result-title">
+                You got
+                <span>lucky!</span>
+            </h2>
+
+            <p class="result-selected">
+                You selected:
+                <strong id="selectedGiftName">
+                    —
+                </strong>
+            </p>
+
+            <div class="result-divider"></div>
+
+            <p class="result-but">
+                BUT...
+            </p>
+
+            <h3 class="result-main">
+                You've qualified for
+                <span>ALL THREE GIFTS! 🎁</span>
+            </h3>
+
+            <p class="result-message">
+                Apparently the birthday committee
+                decided you're too special to receive
+                just one. 😂
+            </p>
+
+
+            <div class="all-gifts">
+
+                <div>🍫</div>
+                <div>🌸</div>
+                <div>🎁</div>
+
+            </div>
+
+
+            <button id="giftResultContinueBtn" class="gift-result-btn">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Confetti container -->
+    <div id="confetti-container"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

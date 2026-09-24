@@ -1,0 +1,2632 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #08060d;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+
+    background:
+        radial-gradient(circle at 50% 50%,
+            rgba(90, 40, 120, 0.18),
+            transparent 45%),
+        #08060d;
+}
+
+
+/* Purple glow */
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.glow-1 {
+    width: 450px;
+    height: 450px;
+
+    background: rgba(168, 85, 247, 0.18);
+
+    top: -150px;
+    left: -100px;
+
+    animation:
+        floatGlow 8s ease-in-out infinite,
+        glowPulse 5s ease-in-out infinite alternate;
+}
+
+.glow-2 {
+    width: 500px;
+    height: 500px;
+
+    background: rgba(236, 72, 153, 0.13);
+
+    bottom: -180px;
+    right: -120px;
+
+    animation:
+        floatGlow 10s ease-in-out infinite reverse,
+        glowPulse 6s ease-in-out infinite alternate-reverse;
+}
+
+
+@keyframes floatGlow {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(40px, -30px);
+    }
+}
+
+
+@keyframes glowPulse {
+
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.stars {
+    position: absolute;
+    inset: -50%;
+
+    background-image:
+        radial-gradient(1px 1px at 20px 30px,
+            rgba(255, 255, 255, 0.7),
+            transparent),
+        radial-gradient(1px 1px at 100px 150px,
+            rgba(255, 255, 255, 0.5),
+            transparent),
+        radial-gradient(1px 1px at 250px 80px,
+            rgba(255, 255, 255, 0.6),
+            transparent),
+        radial-gradient(1px 1px at 350px 200px,
+            rgba(255, 255, 255, 0.5),
+            transparent),
+        radial-gradient(1px 1px at 500px 120px,
+            rgba(255, 255, 255, 0.7),
+            transparent);
+
+    background-size: 550px 300px;
+
+    opacity: 0.5;
+
+    animation:
+        starsMove 40s linear infinite,
+        starsTwinkle 5s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(200px, 100px);
+    }
+}
+
+
+@keyframes starsTwinkle {
+
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================================
+   SCREEN SYSTEM
+========================================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+}
+
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+/* =========================================
+   FIRST SCREEN
+========================================= */
+
+#introScreen {
+    position: fixed;
+    overflow: hidden;
+}
+
+
+/* Cinematic vignette */
+
+#introScreen::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.5) 100%);
+
+    z-index: -1;
+}
+
+
+/* Moving cinematic light */
+
+#introScreen::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    background:
+        radial-gradient(circle,
+            rgba(192, 132, 252, 0.12),
+            transparent 70%);
+
+    filter: blur(30px);
+
+    animation: introLight 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+@keyframes introLight {
+
+    0% {
+        transform: translate(-180px, -100px);
+    }
+
+    50% {
+        transform: translate(100px, 70px);
+    }
+
+    100% {
+        transform: translate(-50px, 160px);
+    }
+}
+
+
+/* Small heading */
+
+.small-text {
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    margin-bottom: 25px;
+
+    animation:
+        fadeUp 1.2s ease forwards,
+        softGlow 3s ease-in-out infinite alternate;
+
+    animation-delay: 0.2s;
+}
+
+
+/* Main heading */
+
+#introScreen h1 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    margin-bottom: 30px;
+
+    animation:
+        fadeUp 1.2s ease forwards,
+        titleFloat 5s ease-in-out infinite;
+
+    animation-delay: 0.4s;
+}
+
+
+/* Name */
+
+.name {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(90deg,
+            #f9a8d4,
+            #c084fc,
+            #f9a8d4);
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: gradientMove 4s linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(244, 114, 182, 0.15),
+        0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+
+/* Emoji */
+
+.emoji {
+
+    display: inline-block;
+
+    font-family: sans-serif;
+
+    animation:
+        emojiFloat 2.5s ease-in-out infinite;
+
+    transform-origin: center;
+}
+
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(5deg);
+    }
+}
+
+
+/* Subtitle */
+
+#introScreen .subtitle {
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin-bottom: 35px;
+
+    animation: fadeUp 1.2s ease forwards;
+
+    animation-delay: 0.7s;
+}
+
+
+/* =========================================
+   OPEN BUTTON
+========================================= */
+
+.open-btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 25px;
+
+    border-radius: 100px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+
+    animation:
+        fadeUp 1.2s ease forwards,
+        buttonPulse 3s ease-in-out infinite;
+
+    animation-delay: 1s;
+}
+
+
+.open-btn:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border-color:
+        rgba(240, 171, 252, 0.4);
+}
+
+
+.open-btn .arrow {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.open-btn:hover .arrow {
+
+    transform: translateX(5px);
+}
+
+
+/* Button shine */
+
+.open-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent);
+
+    transform: skewX(-20deg);
+
+    animation:
+        buttonShine 4s ease-in-out infinite;
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+        left: -100%;
+    }
+
+    35% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0 rgba(192, 132, 252, 0),
+            0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 30px rgba(192, 132, 252, 0.18),
+            0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+.open-btn.clicked {
+
+    transform:
+        scale(0.94);
+
+    filter:
+        brightness(1.3);
+}
+
+
+/* Hint */
+
+.hint {
+
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    animation:
+        fadeUp 1.2s ease forwards;
+
+    animation-delay: 1.3s;
+}
+
+
+/* =========================================
+   TEXT ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes titleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+@keyframes softGlow {
+
+    from {
+
+        text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.05);
+    }
+
+    to {
+
+        text-shadow:
+            0 0 18px rgba(216, 180, 254, 0.25);
+    }
+}
+
+
+@keyframes gradientMove {
+
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 200%;
+    }
+}
+
+
+/* =========================================
+   GIFT SCREEN
+========================================= */
+
+.gift-intro {
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    margin-bottom: 20px;
+}
+
+
+#giftScreen h2 {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(45px, 7vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    margin-bottom: 55px;
+}
+
+
+#giftScreen h2 span {
+
+    font-style: italic;
+
+    background:
+        linear-gradient(90deg,
+            #f9a8d4,
+            #c084fc);
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =========================================
+   GIFT BOX
+========================================= */
+
+.gift-box {
+
+    position: relative;
+
+    width: 180px;
+    height: 160px;
+
+    cursor: pointer;
+
+    animation:
+        giftFloat 3s ease-in-out infinite;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.gift-box:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+.box {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 15px;
+
+    width: 150px;
+    height: 115px;
+
+    background:
+        linear-gradient(135deg,
+            #7e22ce,
+            #4c1d95);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(168, 85, 247, 0.25);
+}
+
+
+.lid {
+
+    position: absolute;
+
+    top: 30px;
+    left: 5px;
+
+    width: 170px;
+    height: 35px;
+
+    background:
+        linear-gradient(135deg,
+            #a855f7,
+            #7e22ce);
+
+    border-radius: 5px;
+
+    z-index: 3;
+
+    transform-origin:
+        left bottom;
+
+    transition:
+        transform 1s ease;
+}
+
+
+.ribbon.vertical {
+
+    position: absolute;
+
+    left: 60px;
+    top: 0;
+
+    width: 30px;
+    height: 100%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+.ribbon.horizontal {
+
+    position: absolute;
+
+    left: 0;
+    top: 40px;
+
+    width: 100%;
+    height: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+.bow {
+
+    position: absolute;
+
+    top: 4px;
+    left: 67px;
+
+    z-index: 5;
+}
+
+
+.bow-left,
+.bow-right {
+
+    position: absolute;
+
+    width: 45px;
+    height: 30px;
+
+    background:
+        #f0abfc;
+
+    border-radius:
+        50% 50% 10% 50%;
+
+    box-shadow:
+        0 0 15px rgba(240, 171, 252, 0.4);
+}
+
+
+.bow-left {
+
+    right: 3px;
+
+    transform:
+        rotate(25deg);
+}
+
+
+.bow-right {
+
+    left: 3px;
+
+    transform:
+        scaleX(-1) rotate(25deg);
+}
+
+
+.click-gift {
+
+    margin-top: 40px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    animation:
+        pulseText 2s ease-in-out infinite;
+}
+
+
+@keyframes pulseText {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+.gift-box.opened {
+
+    animation: none;
+}
+
+
+.gift-box.opened .lid {
+
+    transform:
+        translateY(-65px) rotate(-12deg);
+}
+
+
+/* =========================================
+   BIRTHDAY SCREEN
+========================================= */
+
+.celebration {
+
+    animation:
+        celebrationAppear 1.5s ease forwards;
+}
+
+
+@keyframes celebrationAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px) scale(0.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+.birthday-small {
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    margin-bottom: 20px;
+}
+
+
+.birthday-title {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(60px, 11vw, 140px);
+
+    line-height: 0.75;
+
+    font-weight: 400;
+}
+
+
+.birthday-title span {
+
+    display: block;
+
+    font-style: italic;
+
+    background:
+        linear-gradient(90deg,
+            #f9a8d4,
+            #c084fc,
+            #f9a8d4);
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientMove 4s linear infinite;
+}
+
+
+.birthday-name {
+
+    margin-top: 35px;
+
+    font-size: 18px;
+
+    letter-spacing: 12px;
+
+    padding-left: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.9);
+}
+
+
+.mogu {
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+}
+
+
+.mogu span {
+
+    color:
+        #f0abfc;
+
+    font-style: italic;
+
+    font-size: 18px;
+}
+
+
+.birthday-message {
+
+    margin-top: 30px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+}
+
+
+/* Continue button */
+
+.continue-btn {
+
+    margin-top: 35px;
+
+    padding: 13px 25px;
+
+    border-radius: 100px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        0.3s ease;
+}
+
+
+.continue-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+#confetti-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+
+
+.confetti {
+
+    position: fixed;
+
+    width: 8px;
+    height: 14px;
+
+    top: -20px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+
+@keyframes confettiFall {
+
+    to {
+
+        transform:
+            translateY(110vh) rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #introScreen h1 {
+
+        font-size: 48px;
+    }
+
+    #introScreen .subtitle {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    #introScreen .open-btn {
+
+        padding:
+            14px 24px;
+    }
+
+    #giftScreen h2 {
+
+        font-size: 52px;
+    }
+
+    .gift-box {
+
+        transform:
+            scale(0.9);
+    }
+
+    .birthday-title {
+
+        font-size: 70px;
+    }
+
+    .birthday-name {
+
+        font-size: 15px;
+
+        letter-spacing: 8px;
+    }
+}
+
+/* =========================================
+   BIRTHDAY VERIFICATION SCREEN
+========================================= */
+
+.mission-content {
+    max-width: 650px;
+}
+
+.warning-icon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+
+    animation: warningBounce 2s ease-in-out infinite;
+}
+
+@keyframes warningBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+.mission-small {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    margin-bottom: 20px;
+}
+
+
+.mission-title {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+
+.mission-title span {
+
+    display: block;
+
+    font-style: italic;
+
+    background: linear-gradient(90deg,
+            #f9a8d4,
+            #c084fc);
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.mission-question {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   ANSWER BUTTONS
+========================================= */
+
+.answer-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.answer-btn {
+
+    padding: 14px 22px;
+
+    border-radius: 100px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.answer-btn:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(240, 171, 252, 0.4);
+}
+
+
+/* =========================================
+   RESPONSE
+========================================= */
+
+.mission-response {
+
+    min-height: 45px;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #f0abfc;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: all 0.5s ease;
+}
+
+
+.mission-response.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   REWARD BUTTON
+========================================= */
+
+.reward-btn {
+
+    margin-top: 25px;
+
+    padding: 15px 25px;
+
+    border-radius: 100px;
+
+    border: 1px solid rgba(240, 171, 252, 0.35);
+
+    background: rgba(168, 85, 247, 0.12);
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.1);
+}
+
+
+.reward-btn:hover {
+
+    transform: translateY(-4px);
+
+    background: rgba(168, 85, 247, 0.2);
+
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+}
+
+
+.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+}
+
+
+.reward-btn:not(.hidden) {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+    transition: all 0.7s ease;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .mission-title {
+
+        font-size: 48px;
+    }
+
+    .mission-question {
+
+        font-size: 14px;
+    }
+
+    .answer-buttons {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .answer-btn {
+
+        width: 220px;
+    }
+}
+
+/* =========================================
+   MEMORY / PHOTO SCREEN
+========================================= */
+
+#memoryScreen {
+    overflow-y: auto;
+    overflow-x: hidden;
+    justify-content: center;
+    padding: 25px 20px;
+}
+
+.memory-content {
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Keeps the complete section inside the viewport */
+    max-height: 100%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.memory-small {
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.45);
+
+    margin-bottom: 10px;
+}
+
+
+.memory-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-bottom: 18px;
+}
+
+
+.memory-title span {
+    display: block;
+
+    font-style: italic;
+
+    margin-top: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f9a8d4,
+            #c084fc
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.photo-card {
+    position: relative;
+
+    animation:
+        photoAppear 0.8s ease forwards;
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+/* Photo counter */
+
+.photo-number {
+    position: absolute;
+
+    top: -10px;
+    right: -12px;
+
+    z-index: 5;
+
+    padding: 6px 10px;
+
+    border-radius: 100px;
+
+    font-size: 10px;
+
+    background:
+        rgba(20,15,30,0.9);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    color:
+        rgba(255,255,255,0.7);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   POLAROID
+========================================= */
+
+.photo-frame {
+
+    width: 250px;
+
+    padding:
+        9px 9px 32px;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.5),
+        0 0 25px rgba(192,132,252,0.08);
+
+    transform:
+        rotate(-2deg);
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.photo-frame:hover {
+    transform:
+        rotate(0deg)
+        scale(1.02);
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.memory-caption {
+
+    max-width: 500px;
+
+    min-height: 35px;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(255,255,255,0.7);
+
+    animation:
+        captionAppear 0.6s ease;
+}
+
+
+@keyframes captionAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.memory-btn {
+
+    margin-top: 12px;
+
+    padding:
+        10px 20px;
+
+    border-radius:
+        100px;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color: white;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.memory-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border-color:
+        rgba(240,171,252,0.4);
+}
+
+
+/* =========================================
+   FINISH BUTTON
+========================================= */
+
+.finish-memory {
+
+    border-color:
+        rgba(240,171,252,0.35);
+
+    background:
+        rgba(168,85,247,0.12);
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    opacity: 0 !important;
+
+    visibility: hidden !important;
+
+    pointer-events: none;
+
+    transform:
+        translateY(10px);
+}
+
+
+/* =========================================
+   PHOTO CHANGE
+========================================= */
+
+.photo-changing {
+
+    animation:
+        photoChange 0.5s ease;
+}
+
+
+@keyframes photoChange {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #memoryScreen {
+        justify-content: flex-start;
+        padding-top: 25px;
+    }
+
+    .memory-small {
+        font-size: 9px;
+    }
+
+    .memory-title {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .photo-frame {
+        width: 220px;
+        padding: 8px 8px 28px;
+    }
+
+    .photo-frame img {
+        height: 245px;
+    }
+
+    .memory-caption {
+        font-size: 12px;
+        padding: 0 15px;
+    }
+
+    .memory-btn {
+        margin-top: 10px;
+        padding: 10px 18px;
+    }
+}
+
+
+/* =========================================
+   GIFT SELECTION
+========================================= */
+
+.gift-selection-content {
+    width: 100%;
+    max-width: 950px;
+}
+
+
+.gift-selection-small {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.45);
+
+    margin-bottom: 15px;
+}
+
+
+.gift-selection-title {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(42px, 6vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-bottom: 15px;
+}
+
+
+.gift-selection-title span {
+
+    display: block;
+
+    font-style: italic;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f9a8d4,
+            #c084fc
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.gift-selection-subtitle {
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   GIFT SELECTION
+========================================= */
+
+#giftSelectionScreen {
+    overflow-y: auto;
+    overflow-x: hidden;
+    justify-content: center;
+    padding: 25px 20px;
+}
+
+.gift-selection-content {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+}
+
+
+/* Small heading */
+
+.gift-selection-small {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 10px;
+}
+
+
+/* Main heading */
+
+.gift-selection-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-bottom: 10px;
+}
+
+.gift-selection-title span {
+    display: block;
+
+    font-style: italic;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f9a8d4,
+            #c084fc
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* Subtitle */
+
+.gift-selection-subtitle {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: rgba(255,255,255,0.5);
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   GIFT CARDS
+========================================= */
+
+.gift-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    width: 100%;
+}
+
+
+/* Individual card */
+
+.gift-option {
+
+    position: relative;
+
+    padding: 20px 16px;
+
+    height: 205px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Hover */
+
+.gift-option:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(240,171,252,0.35);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.3);
+}
+
+
+/* Selected */
+
+.gift-option.selected {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(240,171,252,0.8);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(168,85,247,0.18),
+            rgba(236,72,153,0.08)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        0 0 30px rgba(192,132,252,0.2);
+}
+
+
+/* Icon */
+
+.gift-icon {
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(255,255,255,0.15)
+        );
+}
+
+
+/* Card title */
+
+.gift-option h3 {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 23px;
+
+    font-weight: 500;
+
+    margin-bottom: 6px;
+}
+
+
+/* Card description */
+
+.gift-option p {
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    max-width: 210px;
+}
+
+
+/* Selection indicator */
+
+.select-indicator {
+
+    position: absolute;
+
+    bottom: 13px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color:
+        rgba(255,255,255,0.35);
+}
+
+
+.gift-option.selected
+.select-indicator {
+
+    color:
+        #f0abfc;
+}
+
+
+.gift-option.selected
+.select-indicator::before {
+
+    content:
+        "✓ ";
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.gift-continue-btn {
+
+    margin-top: 18px;
+
+    padding:
+        11px 23px;
+
+    border-radius:
+        100px;
+
+    border:
+        1px solid rgba(240,171,252,0.35);
+
+    background:
+        rgba(168,85,247,0.12);
+
+    color: white;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.gift-continue-btn:disabled {
+
+    opacity: 0.35;
+
+    cursor:
+        not-allowed;
+}
+
+
+.gift-continue-btn:not(:disabled):hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(168,85,247,0.2);
+
+    box-shadow:
+        0 0 25px
+        rgba(168,85,247,0.2);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    #giftSelectionScreen {
+
+        justify-content: flex-start;
+
+        padding-top: 25px;
+    }
+
+
+    .gift-selection-title {
+
+        font-size: 40px;
+    }
+
+
+    .gift-selection-subtitle {
+
+        margin-bottom: 15px;
+    }
+
+
+    .gift-options {
+
+        grid-template-columns: 1fr;
+
+        max-width: 300px;
+
+        margin: auto;
+
+        gap: 10px;
+    }
+
+
+    .gift-option {
+
+        height: 125px;
+
+        min-height: 125px;
+
+        padding: 12px 15px;
+    }
+
+
+    .gift-icon {
+
+        font-size: 27px;
+
+        margin-bottom: 4px;
+    }
+
+
+    .gift-option h3 {
+
+        font-size: 21px;
+
+        margin-bottom: 3px;
+    }
+
+
+    .gift-option p {
+
+        font-size: 10px;
+
+        line-height: 1.35;
+    }
+
+
+    .select-indicator {
+
+        bottom: 8px;
+    }
+
+
+    .gift-continue-btn {
+
+        margin-top: 14px;
+    }
+}
+/* =========================================
+   GIFT RESULT / LUCKY SCREEN
+========================================= */
+
+#giftResultScreen {
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.gift-result-content {
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Celebration emoji */
+
+.result-emoji {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 12px;
+
+    animation: resultBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes resultBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* Small heading */
+
+.result-small {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.45);
+
+    margin-bottom: 15px;
+}
+
+
+/* Main title */
+
+.result-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 0.8;
+
+    margin: 0;
+}
+
+
+.result-title span {
+    display: block;
+
+    font-style: italic;
+
+    margin-top: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f9a8d4,
+            #c084fc,
+            #f9a8d4
+        );
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientMove 4s linear infinite;
+}
+
+
+/* Selected gift */
+
+.result-selected {
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,0.5);
+}
+
+
+.result-selected strong {
+
+    color: #f0abfc;
+
+    font-weight: 500;
+}
+
+
+/* Divider */
+
+.result-divider {
+
+    width: 55px;
+
+    height: 1px;
+
+    margin: 18px auto;
+
+    background:
+        rgba(255,255,255,0.2);
+}
+
+
+/* BUT */
+
+.result-but {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    margin: 0;
+}
+
+
+/* Main announcement */
+
+.result-main {
+
+    margin-top: 12px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(30px, 5vw, 45px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    margin-bottom: 0;
+}
+
+
+.result-main span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        #f0abfc;
+}
+
+
+/* Explanation */
+
+.result-message {
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    max-width: 550px;
+
+    color:
+        rgba(255,255,255,0.55);
+}
+
+
+/* =========================================
+   ALL THREE GIFTS
+========================================= */
+
+.all-gifts {
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+
+.all-gifts div {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    font-size: 24px;
+
+    box-shadow:
+        0 0 20px
+        rgba(168,85,247,0.08);
+
+    opacity: 0;
+
+    animation:
+        giftPop 0.6s ease forwards;
+}
+
+
+.all-gifts div:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.all-gifts div:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.all-gifts div:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+@keyframes giftPop {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.gift-result-btn {
+
+    margin-top: 25px;
+
+    padding:
+        12px 25px;
+
+    border-radius:
+        100px;
+
+    border:
+        1px solid rgba(240,171,252,0.3);
+
+    background:
+        rgba(168,85,247,0.12);
+
+    color: white;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.gift-result-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(168,85,247,0.22);
+
+    border-color:
+        rgba(240,171,252,0.55);
+
+    box-shadow:
+        0 0 30px
+        rgba(168,85,247,0.18);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #giftResultScreen {
+        justify-content: flex-start;
+        padding-top: 35px;
+    }
+
+    .result-emoji {
+        font-size: 32px;
+    }
+
+    .result-small {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .result-title {
+        font-size: 62px;
+    }
+
+    .result-selected {
+        margin-top: 22px;
+    }
+
+    .result-main {
+        font-size: 32px;
+    }
+
+    .result-message {
+        padding: 0 15px;
+    }
+
+    .all-gifts {
+        gap: 12px;
+    }
+
+    .all-gifts div {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+}
