@@ -186,7 +186,7 @@ const memories = [
 
     {
         image:
-            "https://picsum.photos/600/700?random=1",
+            "images/1.jpeg",
 
         caption:
             "Exhibit A: name spotted in her natural habitat. 😂"
@@ -194,7 +194,7 @@ const memories = [
 
     {
         image:
-            "https://picsum.photos/600/700?random=2",
+            "images/2.jpeg",
 
         caption:
             "Exhibit B: Somehow still surviving another year. Impressive. 😌😂"
@@ -202,7 +202,7 @@ const memories = [
 
     {
         image:
-            "https://picsum.photos/600/700?random=3",
+            "images/3.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
@@ -210,11 +210,125 @@ const memories = [
 
     {
         image:
-            "https://picsum.photos/600/700?random=4",
+            "images/4.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/5.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/6.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/7.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/8.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/9.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/10.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/11.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/12.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/13.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/14.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/15.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/16.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/17.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/18.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+    {
+        image:
+            "images/19.jpeg",
+
+        caption:
+            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+    },
+
+    {
+        image:
+            "images/20.jpeg",
 
         caption:
             "Final exhibit: The legendary name. Case closed. 🫡😂"
     }
+
 
 ];
 
