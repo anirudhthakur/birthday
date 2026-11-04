@@ -15,7 +15,9 @@ const missionResponse = document.getElementById("missionResponse");
 const rewardBtn = document.getElementById("rewardBtn");
 
 const memoryScreen = document.getElementById("memoryScreen"); const nextPhotoBtn = document.getElementById("nextPhotoBtn"); const finishMemoryBtn = document.getElementById("finishMemoryBtn"); const memoryImage = document.getElementById("memoryImage"); const memoryCaption = document.getElementById("memoryCaption"); const photoNumber = document.querySelector(".photo-number"); const photoCard = document.querySelector(".photo-card");
+const backgroundMusic = document.getElementById("backgroundMusic");
 
+backgroundMusic.volume = 0.35;
 
 
 const selectedGiftName =
@@ -57,6 +59,9 @@ function changeScreen(current, next) {
 openBtn.addEventListener("click", () => {
     // Button click effect
     openBtn.classList.add("clicked");
+    backgroundMusic.play().catch(error => {
+        console.log("Music could not start:", error);
+    });
 
     setTimeout(() => {
         changeScreen(introScreen, giftScreen);
@@ -186,7 +191,7 @@ const memories = [
 
     {
         image:
-            "images/1.jpeg",
+            "images/1n.jpeg",
 
         caption:
             "Exhibit A: name spotted in her natural habitat. 😂"
@@ -194,7 +199,7 @@ const memories = [
 
     {
         image:
-            "images/2.jpeg",
+            "images/2n.jpeg",
 
         caption:
             "Exhibit B: Somehow still surviving another year. Impressive. 😌😂"
@@ -202,7 +207,7 @@ const memories = [
 
     {
         image:
-            "images/3.jpeg",
+            "images/3n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
@@ -210,112 +215,112 @@ const memories = [
 
     {
         image:
-            "images/4.jpeg",
+            "images/4n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/5.jpeg",
+            "images/5n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/6.jpeg",
+            "images/6n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/7.jpeg",
+            "images/7n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/8.jpeg",
+            "images/8n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/9.jpeg",
+            "images/9n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/10.jpeg",
+            "images/10n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/11.jpeg",
+            "images/11n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/12.jpeg",
+            "images/12n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/13.jpeg",
+            "images/13n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/14.jpeg",
+            "images/14n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/15.jpeg",
+            "images/15n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/16.jpeg",
+            "images/16n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/17.jpeg",
+            "images/17n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/18.jpeg",
+            "images/18n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
     },
     {
         image:
-            "images/19.jpeg",
+            "images/19n.jpeg",
 
         caption:
             "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
@@ -323,7 +328,7 @@ const memories = [
 
     {
         image:
-            "images/20.jpeg",
+            "images/20n.jpeg",
 
         caption:
             "Final exhibit: The legendary name. Case closed. 🫡😂"
@@ -379,13 +384,16 @@ nextPhotoBtn.addEventListener("click", () => {
 
 });
 
-
 finishMemoryBtn.addEventListener("click", () => {
 
-    changeScreen(
-        memoryScreen,
-        giftSelectionScreen
-    );
+    document.querySelector(".photo-card").classList.add("hidden");
+    memoryCaption.classList.add("hidden");
+    nextPhotoBtn.classList.add("hidden");
+    finishMemoryBtn.classList.add("hidden");
+
+    document.querySelector(".memory-title").classList.add("hidden");
+
+    document.getElementById("finalMessage").classList.remove("hidden");
 
 });
 
@@ -534,5 +542,19 @@ if (giftResultContinueBtn) {
 
         }
     );
+
+    const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click", () => {
+
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        musicToggle.textContent = "🔊 Music On";
+    } else {
+        backgroundMusic.pause();
+        musicToggle.textContent = "🔇 Music Off";
+    }
+
+});
 
 }

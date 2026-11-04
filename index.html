@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For name ✨</title>
+    <title>For Komal ✨</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<audio id="backgroundMusic" loop>
+    <source src="audio/birthday-song.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-toggle">
+    🔊 Music On
+</button>
 
     <!-- Background -->
     <div class="background">
@@ -32,7 +38,7 @@
 
         <h1>
             Hey,
-            <span class="name">name</span>
+            <span class="name">Komal</span>
             <span class="emoji">👀</span>
         </h1>
 
@@ -61,7 +67,7 @@
     <section id="giftScreen" class="screen">
 
         <p class="gift-intro">
-            Okay name...
+            Okay Komal...
         </p>
 
         <h2>
@@ -114,7 +120,7 @@
             </div>
 
             <div class="mogu">
-                aka <span>name</span> 🐻
+                aka <span>Mogu Mogu</span> 🐻
             </div>
 
             <p class="birthday-message">
@@ -181,17 +187,36 @@
     <section id="memoryScreen" class="screen">
         <div class="memory-content">
             <p class="memory-small"> CLASSIFIED ARCHIVES 📂 </p>
-            <h2 class="memory-title"> Before we continue... <span>let's look at some evidence. 👀</span> </h2>
+            <h2 class="memory-title">Let's look at some cute pics</h2>
             <!-- PHOTO CARD -->
             <div class="photo-card">
-                <div class="photo-number"> 01 / 04 </div>
-                <div class="photo-frame"> <img id="memoryImage" src="images/1.jpeg"
+                <div class="photo-number"> 01 / 20 </div>
+                <div class="photo-frame"> <img id="memoryImage" src="images/1n.jpeg"
                         alt="Memory"> </div>
             </div> <!-- CAPTION -->
             <p id="memoryCaption" class="memory-caption"> Exhibit A: name spotted in her natural habitat. 😂 </p>
             <!-- NEXT BUTTON --> <button id="nextPhotoBtn" class="memory-btn"> Next Evidence 📸 → </button>
-            <!-- FINAL BUTTON --> <button id="finishMemoryBtn" class="memory-btn finish-memory hidden"> Okay, enough
-                evidence 😂 → </button>
+            <!-- FINAL BUTTON --> <button id="finishMemoryBtn" class="memory-btn finish-memory hidden"> Close the Archives ❤️ → </button>
+            <div id="finalMessage" class="final-message hidden">
+    <p class="final-small"></p>
+
+    <h2>That's all, Mogu Mogu.😉</h2>
+
+    <h3>Happy Birthday, Komal!</h3>
+
+    <p>
+        Stay the same crazy, funny and wonderful person you are.
+        Wishing you lots of happiness, laughter and beautiful
+        memories ahead.
+    </p>
+
+    <p class="final-signature">
+        <br>
+        From the department of unnecessary attention.😂
+    </p>
+
+    <p class="final-end"></p>
+</div>
         </div>
     </section>
 
