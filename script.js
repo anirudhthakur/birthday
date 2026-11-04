@@ -171,7 +171,7 @@ function showMissionResponse(message) {
 yesBtn.addEventListener("click", () => {
 
     showMissionResponse(
-        "Hmm... suspiciously confident. 🤨 But okay, we'll accept it. 😂"
+        "Interesting. Your actions suggest otherwise. 😂"
     );
 
 });
@@ -180,7 +180,7 @@ yesBtn.addEventListener("click", () => {
 thinkBtn.addEventListener("click", () => {
 
     showMissionResponse(
-        "Take your time. After all, you've had another whole year to figure it out. 😂"
+        "Fair point. We'll let this one slide.😂"
     );
 
 });
@@ -194,7 +194,7 @@ const memories = [
             "images/1n.jpeg",
 
         caption:
-            "Exhibit A: name spotted in her natural habitat. 😂"
+            "Exhibit A: The OG version. Same attitude, smaller package.😂"
     },
 
     {
@@ -202,7 +202,7 @@ const memories = [
             "images/2n.jpeg",
 
         caption:
-            "Exhibit B: Somehow still surviving another year. Impressive. 😌😂"
+            "Exhibit B: Almost looking similar.😌😂"
     },
 
     {
@@ -210,7 +210,7 @@ const memories = [
             "images/3n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit C: Tiny Komal, big main-character energy."
     },
 
     {
@@ -218,112 +218,112 @@ const memories = [
             "images/4n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit D: Proof that she occasionally looks completely innocent."
     },
     {
         image:
             "images/5n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit E: Badminton: 1 | Komal: 0. 😂"
     },
     {
         image:
             "images/6n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit F: Someone definitely knows her good angles."
     },
     {
         image:
             "images/7n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit G: Jb ye pics deni he nhi thi to hr roz mehnat kyu krvai! 😂"
     },
     {
         image:
             "images/8n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit H: When the trip gets too exciting to stay awake.👀"
     },
     {
         image:
             "images/9n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit I: Some people just know how to steal the spotlight."
     },
     {
         image:
             "images/10n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit J: No paparazzi, please!"
     },
     {
         image:
             "images/11n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit K: A little elegance, a little magic, and a whole lot of charm."
     },
     {
         image:
             "images/12n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit L: Bhaiya classic cold coffee & choco brownie cookie pls!"
     },
     {
         image:
             "images/13n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit M: The best part of travelling is the people you travel with!"
     },
     {
         image:
             "images/14n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit N: Waah kya snowman bnaya hai !"
     },
     {
         image:
             "images/15n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit O: Ice Cream khalo frands!"
     },
     {
         image:
             "images/16n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit P: No one knows what the steps are, including you!"
     },
     {
         image:
             "images/17n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit Q: VIP in the house !"
     },
     {
         image:
             "images/18n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit R: Effortlessly stealing the spotlight, as always!"
     },
     {
         image:
             "images/19n.jpeg",
 
         caption:
-            "Exhibit C: Proof that she occasionally looks completely innocent. 👀"
+            "Exhibit S: Three idiots, countless memories!"
     },
 
     {
@@ -331,7 +331,7 @@ const memories = [
             "images/20n.jpeg",
 
         caption:
-            "Final exhibit: The legendary name. Case closed. 🫡😂"
+            "Final exhibit: The kind of friendship you wish you could pause in time!"
     }
 
 
